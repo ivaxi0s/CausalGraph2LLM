@@ -12,6 +12,7 @@ from src.prompts.context import description
 from src.verbose import verbose_single_graph, verbose_lookup_nodes
 from src.prompts.prompt_manager import graph_represenations
 
+BLABLADOR_KEY = ""
 
 def prompt_gpt(prompts, gpt, temp, max_tokens, top_p, frequency_penalty, presence_penalty):
 
@@ -23,7 +24,7 @@ def prompt_gpt(prompts, gpt, temp, max_tokens, top_p, frequency_penalty, presenc
         url = 'https://helmholtz-blablador.fz-juelich.de:8000/v1/chat/completions'
         headers = {
             'accept': 'application/json',
-            'Authorization': 'Bearer glpat-s51hNCKNQCrhxhuY9ibr',
+            'Authorization': BLABLADOR_KEY,
             'Content-Type': 'application/json',
         }
 
