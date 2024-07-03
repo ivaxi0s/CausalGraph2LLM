@@ -92,18 +92,53 @@ The dataset is downloaded when `main.py` is run. The nodes can be representated 
 
 - For synthetic datasets, you need to include the `--syn` argument. 
 - For graph level tasks, you need to include the `--query_type desc` argument. 
+- For BNLearn graph, you can include either `--commonsense` argument if you contextual variables are needed or `--numerical` for randomised variable names. 
+- For the downstream interventional task, use the argument `--interv`
 
 
 
 ### Basic Graph Queries
-To evaluate the baseline causal graph understanding task, we prompt the LLMs with causal query tasks resembling those encountered in larger causal reasoning tasks. We run this experiment on syntehtic DAGs. There are six tasks that we evaluate the performance against. We also test for each encoding style. 
+To evaluate the baseline causal graph understanding task, we prompt the LLMs with causal query tasks resembling those encountered in larger causal reasoning tasks. We run this experiment on synthetic DAGs. There are six tasks that we evaluate the performance against. We also test for each encoding style. 
 
 An example to run basic graph-level query for source task is as follows:
 
 ```
-python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --node_type source --query_type desc --evaluate
+python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --node_type source --query_type desc
 
 ```
+
+### Effect of pretraining knowledge on causal graph understanding
+We aim to evaluate the effect of pretraining knowledge on the understanding of causal graphs. Current research often utilizes LLMs to obtain causal priors by leveraging the semantic information embedded in variable names. we specifically test causal graphs with and without contextual knowledge, allowing us to directly assess how pretraining influences LLMs’ performance. 
+
+We run experiments on Alarm and Insurance DAGs with and without variable meta data for this. 
+
+An example to run experiment on Alarm with contextual knnowledge is as follows:
+
+```
+python main.py --model gpt-4 --emb json --dataset alarm --commonsense --prompt --node_type source --query_type desc
+
+```
+
+An example to run experiment on Alarm without contextual knnowledge is as follows:
+
+```
+python main.py --model gpt-4 --emb json --dataset alarm --numerical --prompt --node_type source --query_type desc
+
+```
+
+### Node-based queries
+Graph-overview tasks requires the model to understand the entire graph structure and identify all nodes that follow the given task criteria. We break down the graph overview tasks into binary queries for node-inspection tasks to better understand the model’s performance on simpler, more focused queries.
+
+An example to run basic graph-level query for source task is as follows:
+
+```
+python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --node_type source --query_type binary
+
+```
+
+### Downstream task performance
+we aim to observe this effect on a downstream task
+
 
 
 ## Citation
