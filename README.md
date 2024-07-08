@@ -104,7 +104,6 @@ An example to run basic graph-level query for source task is as follows:
 
 ```
 python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --node_type source --query_type desc
-
 ```
 
 ### Effect of pretraining knowledge on causal graph understanding
@@ -116,14 +115,12 @@ An example to run experiment on Alarm with contextual knnowledge is as follows:
 
 ```
 python main.py --model gpt-4 --emb json --dataset alarm --commonsense --prompt --node_type source --query_type desc
-
 ```
 
 An example to run experiment on Alarm without contextual knnowledge is as follows:
 
 ```
 python main.py --model gpt-4 --emb json --dataset alarm --numerical --prompt --node_type source --query_type desc
-
 ```
 
 ### Node-based queries
@@ -133,7 +130,6 @@ An example to run basic graph-level query for source task is as follows:
 
 ```
 python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --node_type source --query_type binary
-
 ```
 
 ### Downstream task performance
@@ -141,11 +137,10 @@ We aim to observe sensitivity effects of an LLM on a downstream task. The task i
 
 ```
 python main.py --gpt gpt-4 --emb json --dataset syn_20_20 --syn --prompt --interv --query_type binary
-
 ```
 
 ## Acknowledgements
-The codebooks were obtained from (this codebase)[https://github.com/StephLong614/Causal-disco-LLM-imperfect-experts].
+The codebooks were obtained from [this codebase](https://github.com/StephLong614/Causal-disco-LLM-imperfect-experts).
 
 ## Citation
 If you find this code useful, please cite us. 
