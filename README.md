@@ -137,9 +137,15 @@ python main.py --model gpt-4 --emb json --dataset syn_20_20 --syn --prompt --nod
 ```
 
 ### Downstream task performance
-we aim to observe this effect on a downstream task
+We aim to observe sensitivity effects of an LLM on a downstream task. The task is to determine the impact of the intervention on other variables in the graph. The LLM must infer whether the intervened variable causes changes in the other variables, based on the structure of the causal graph. An example to run intervention task is as follows:
 
+```
+python main.py --gpt gpt-4 --emb json --dataset syn_20_20 --syn --prompt --interv --query_type binary
 
+```
+
+## Acknowledgements
+The codebooks were obtained from (this codebase)[https://github.com/StephLong614/Causal-disco-LLM-imperfect-experts].
 
 ## Citation
-If you find this code useful, please cite us.
+If you find this code useful, please cite us. 
