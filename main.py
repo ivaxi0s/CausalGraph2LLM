@@ -23,7 +23,7 @@ if __name__ == "__main__":
     
     commandLineParser = argparse.ArgumentParser()
     commandLineParser.add_argument('--save_folder', type=str, default = "output", help='e.g. experiments/trained_models/my_model')
-    commandLineParser.add_argument('--gpt', type=str, default = "gpt-3.5-turbo", help='gpt type')
+    commandLineParser.add_argument('--model', type=str, default = "gpt-3.5-turbo", help='gpt type')
     commandLineParser.add_argument('--seed', type=int, default = 0, help='e.g. experiments/trained_models/my_model')
     commandLineParser.add_argument('--temp', type=float, default = 0.0, help='temperature')
     commandLineParser.add_argument('--max_tokens', type=int, default = 2000, help='max token')    
@@ -71,13 +71,13 @@ if __name__ == "__main__":
     save_f = os.path.join(str(args.save_folder), str(args.query_type), str(args.dataset))  #add query type
     check_dir(save_f)
 
-    file_name = f'{args.gpt}_topk-{args.topk}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}.json'
+    file_name = f'{args.model}_topk-{args.topk}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}.json'
     if args.commonsense:
-        file_name = f'commonsense_{args.node_type}_{args.gpt}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
+        file_name = f'commonsense_{args.node_type}_{args.model}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
     if args.numerical:
-        file_name = f'numerical_{args.node_type}_{args.gpt}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
+        file_name = f'numerical_{args.node_type}_{args.model}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
     if args.syn:
-        file_name = f'syn_{args.node_type}_{args.gpt}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
+        file_name = f'syn_{args.node_type}_{args.model}_temp-{args.temp}_max-token-{args.max_tokens}_top-p-{args.top_p}_frequency-{args.frequency_penalty}_presence-{args.presence_penalty}_order{args.order}.json'
     # breakpoint()
     if args.emb != 'std':
         save_f = os.path.join(str(save_f), str(args.emb))

@@ -32,7 +32,7 @@ def run_succ_pred_node(args, codebook, out_file, save_f):
             save_prompts(all_prompts, out_file)
             print("done save prompts")
             # exit()
-            model_answers = normal_prompt_models(all_prompts, described_nodes, args.gpt, args.temp, args.max_tokens, args.top_p, args.frequency_penalty, args.presence_penalty)
+            model_answers = normal_prompt_models(all_prompts, described_nodes, args.model, args.temp, args.max_tokens, args.top_p, args.frequency_penalty, args.presence_penalty)
             save_f = os.path.join(save_f, "parse")
 
             with open(out_file, 'w') as output_file:

@@ -45,7 +45,7 @@ def desc_prompter(args, codebook, out_file, save_f):
         else:
             save_prompts(all_prompts, out_file)
             # exit()
-            model_answers = normal_prompt_models(all_prompts, nodes, args.gpt, args.temp, args.max_tokens, args.top_p, args.frequency_penalty, args.presence_penalty)
+            model_answers = normal_prompt_models(all_prompts, nodes, args.model, args.temp, args.max_tokens, args.top_p, args.frequency_penalty, args.presence_penalty)
             with open(out_file, 'w') as output_file:
                 output_file.write(json.dumps(model_answers, indent=2))
 
