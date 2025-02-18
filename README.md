@@ -148,7 +148,7 @@ If you find this code useful, please cite us.
 @inproceedings{sheth2024causalgraph2llm,
   title={CausalGraph2LLM: Evaluating LLMs for Causal Queries},
   author={Sheth, Ivaxi and Fatemi, Bahare and Fritz, Mario},
-  journal={NAACL},
+  journal={NAACL Findings},
   year={2025}
 }
 ```
