@@ -1,4 +1,4 @@
-# CausalGraph2LLM: Evaluating LLMs for Causal Queries
+# [NAACL'25] CausalGraph2LLM: Evaluating LLMs for Causal Queries
 Codebase to systematically evaluate the causal graph understanding in LLMs.
 
 [Ivaxi Sheth](https://ivaxi0s.github.io/), [Bahare Fatemi](https://baharefatemi.github.io/homepage/), [Mario Fritz](https://cispa.saarland/group/fritz/)
@@ -144,3 +144,11 @@ The codebooks were obtained from [this codebase](https://github.com/StephLong614
 
 ## Citation
 If you find this code useful, please cite us. 
+```text
+@inproceedings{sheth2024causalgraph2llm,
+  title={CausalGraph2LLM: Evaluating LLMs for Causal Queries},
+  author={Sheth, Ivaxi and Fatemi, Bahare and Fritz, Mario},
+  journal={NAACL},
+  year={2025}
+}
+```
